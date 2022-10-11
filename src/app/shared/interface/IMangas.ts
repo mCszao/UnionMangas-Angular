@@ -1,5 +1,5 @@
-import { AgeGroup } from './../enums/AgeGroup.enum';
-import { IAuthor } from './Iauthor';
+import { AgeGroup } from "./../enums/AgeGroup.enum";
+import { IAuthor } from "./IAuthor";
 
 export interface IMangas {
     idManga: number,
