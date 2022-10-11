@@ -1,3 +1,4 @@
 export const environment = {
-  production: false
+  production: false,
+  API_PATH: "http://localhost:8080/unionmangas"
 };
