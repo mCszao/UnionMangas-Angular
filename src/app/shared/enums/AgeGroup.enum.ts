@@ -1,0 +1,8 @@
+export enum AgeGroup {
+    LIVRE = "LIVRE",
+    MAIOR_10 = "MAIOR DE 10 ANOS",
+    MAIOR_12 = "MAIOR DE 12 ANOS",
+    MAIOR_14 = "MAIOR DE 14 ANOS",
+    MAIOR_16 = "MAIOR DE 16 ANOS",
+    MAIOR_18 = "MAIOR DE 18 ANOS"
+}
