@@ -1,3 +1,4 @@
+import { NavMenuComponent } from './../components/navbar/nav-menu/nav-menu.component';
 import { NavbarComponent } from './../components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,8 @@ import { HomeComponent } from './home.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    NavMenuComponent
   ],
   imports: [
     CommonModule,
