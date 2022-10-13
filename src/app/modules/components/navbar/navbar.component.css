@@ -1,7 +1,0 @@
-:host {
-    --navbar-black: #000000;
-}
-
-.nav-color {
-    background-color: var(--navbar-black);
-}
