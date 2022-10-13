@@ -1,7 +1,7 @@
-import { AgeGroup } from "./../enums/AgeGroup.enum";
+import { IGenre } from './IGenre';
 import { IAuthor } from "./IAuthor";
 
-export interface IMangas {
+export interface IManga {
     idManga: number,
     mainTitle: string,
     alternativeTitle: string,
@@ -14,5 +14,5 @@ export interface IMangas {
     releaseDate: Date,
     lastUpdate: Date,
     authors: IAuthor[],
-    genres: AgeGroup[]
+    genres: IGenre[]
 }
