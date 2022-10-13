@@ -1,6 +1,6 @@
-import { AgeGroup } from './../enums/AgeGroup.enum';
+import { AgeGroup } from '../enums/AgeGroup.enum';
 
-export interface IGenres {
+export interface IGenre {
     idGenre: number,
     name: string,
     description: string,
