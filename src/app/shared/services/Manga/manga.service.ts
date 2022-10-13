@@ -1,4 +1,5 @@
-import { IMangas } from './../../interface/IMangas';
+import { IPage } from './../../interface/IPage';
+import { IGetMangas } from './../../interface/IGetMangas';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { environment } from 'src/environments/environment';
@@ -13,11 +14,10 @@ export class MangaService {
   constructor(private http: HttpClient) { }
 
 
-  listManga(): Observable<IMangas[]> {
+  listManga(): Observable<IPage<IGetMangas[]>> {
     const headersnew = new HttpHeaders({
       "content-type": "application/json"
     })
-    return this.http.get<IMangas[]>(`${this.API}/mangas`, { headers: headersnew })
+    return this.http.get<IPage<IGetMangas[]>>(`${this.API}/mangas`, { headers: headersnew })
   }
-
 }
