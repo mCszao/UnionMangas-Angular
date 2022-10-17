@@ -9,10 +9,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MangaService {
+  private readonly API = environment.API_PATH;
 
-  private readonly API = `${environment.API_PATH}`
   constructor(private http: HttpClient) { }
-
 
   listManga(): Observable<IPage<IGetMangas[]>> {
     const headersnew = new HttpHeaders({
