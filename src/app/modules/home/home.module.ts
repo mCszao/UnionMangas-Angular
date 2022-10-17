@@ -8,6 +8,7 @@ import { ListMangaComponent } from './../../core/mangas/list-manga/list-manga.co
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    FormsModule
 
   ]
 })
