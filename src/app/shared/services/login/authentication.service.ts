@@ -1,3 +1,4 @@
+import { IUserInformation } from '../../interface/IUserInformation';
 import { environment } from './../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -7,13 +8,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private readonly API = `${environment.API_PATH}`
+  private readonly API = environment.API_PATH;
+
   constructor(private http: HttpClient) { }
 
-  authenticate(user: string, password: string): Observable<any> {
-    return this.http.post(`${this.API}`, {
-      userName: user,
-      passwordUser: password
-    })
+  authenticate(loginUser: IUserInformation): Observable<IUserInformation> {
+    return this.http.post<IUserInformation>(`${this.API}/auth/signin`, loginUser)
   }
 }
