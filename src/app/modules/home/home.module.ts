@@ -5,6 +5,7 @@ import { NavbarComponent } from 'src/app/core/components/navbar/navbar.component
 import { NavMenuComponent } from 'src/app/core/components/navbar/nav-menu/nav-menu.component';
 import { MangaComponent } from 'src/app/core/mangas/manga/manga.component';
 import { ListMangaComponent } from './../../core/mangas/list-manga/list-manga.component';
+import { RegisterUserComponent } from 'src/app/core/register-user/register-user.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     NavMenuComponent,
     ListMangaComponent,
     MangaComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterUserComponent
   ],
   imports: [
     CommonModule,
