@@ -1,14 +1,16 @@
 <h3 class="text-center">Login</h3>
 
-<form class="form mt-4" (ngSubmit)="login()">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Nome do usuário" [(ngModel)]="loginUser.userName"
-      name="userName" />
+<form class="row g-3" (ngSubmit)="login()">
+  <div class="col-md-12">
+    <label for="inputEmail4" class="form-label">Usuário*</label>
+    <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="loginUser.userName">
+  </div>
+  <div class="col-md-12">
+    <label for="inputPassword4" class="form-label">Senha*</label>
+    <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="loginUser.password">
   </div>
 
-  <div class="form-group">
-    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="loginUser.password" name="password" />
+  <div class="col-12">
+    <button type="submit" class="btn btn-outline-primary">Login</button>
   </div>
-
-  <button type="submit" class="btn btn-primary btn-block">Login</button>
 </form>

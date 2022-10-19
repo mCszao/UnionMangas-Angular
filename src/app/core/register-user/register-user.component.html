@@ -1,15 +1,16 @@
 <h3 class="text-center">Cadastre-se</h3>
 
-<form class="form mt-4" (ngSubmit)="register()">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Nome do usuário" [(ngModel)]="registerUser.userName"
-      name="userName" />
+<form class="row g-3" (ngSubmit)="register()">
+  <div class="col-md-12">
+    <label for="inputEmail4" class="form-label">Usuário*</label>
+    <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="registerUser.userName">
+  </div>
+  <div class="col-md-12">
+    <label for="inputPassword4" class="form-label">Senha*</label>
+    <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="registerUser.password">
   </div>
 
-  <div class="form-group">
-    <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="registerUser.password"
-      name="password" />
+  <div class="col-12">
+    <button type="submit" class="btn btn-outline-primary">Cadastrar-se</button>
   </div>
-
-  <button type="submit" class="btn btn-primary btn-block">Login</button>
 </form>
