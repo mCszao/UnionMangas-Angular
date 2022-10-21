@@ -2,12 +2,12 @@
 
 <form class="row g-3" (ngSubmit)="login()">
   <div class="col-md-12">
-    <label for="inputEmail4" class="form-label">Usuário*</label>
-    <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="loginUser.userName">
+    <label for="Email" class="form-label">Usuário*</label>
+    <input type="email" class="form-control" id="Email" [(ngModel)]="loginUser.userName" name="userName">
   </div>
   <div class="col-md-12">
-    <label for="inputPassword4" class="form-label">Senha*</label>
-    <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="loginUser.password">
+    <label for="Password" class="form-label">Senha*</label>
+    <input type="password" class="form-control" id="Password" [(ngModel)]="loginUser.password" name="password">
   </div>
 
   <div class="col-12">

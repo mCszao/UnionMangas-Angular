@@ -1,4 +1,4 @@
-import { IUserInformation } from '../../interface/IUserInformation';
+import { ILogin } from '../../interface/ILogin';
 import { environment } from './../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  authenticate(loginUser: IUserInformation): Observable<IUserInformation> {
-    return this.http.post<IUserInformation>(`${this.API}/auth/signin`, loginUser)
+  authenticate(loginUser: ILogin): Observable<ILogin> {
+    return this.http.post<ILogin>(`${this.API}/auth/signin`, loginUser)
   }
 }

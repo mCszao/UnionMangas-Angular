@@ -1,5 +1,5 @@
+import { IRegisterUser } from './../../shared/interface/IRegisterUser';
 import { RegisterService } from './../../shared/services/registerUser/register.service';
-import { IUserInformation } from './../../shared/interface/IUserInformation';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './register-user.component.html',
 })
 export class RegisterUserComponent implements OnInit {
-  registerUser: IUserInformation = {
+  registerUser: IRegisterUser = {
     userName: "",
-    password: ""
+    password: "",
+    scan: false
   }
 
-  constructor(private service: RegisterService) { }
+  constructor(
+    private service: RegisterService) { }
 
   ngOnInit() {
   }

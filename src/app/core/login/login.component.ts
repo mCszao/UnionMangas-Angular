@@ -1,5 +1,6 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../shared/services/login/authentication.service';
-import { IUserInformation } from './../../shared/interface/IUserInformation';
+import { ILogin } from '../../shared/interface/ILogin';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,19 +8,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
-  loginUser: IUserInformation = {
+  loginUser: ILogin = {
     userName: "",
     password: ""
   }
 
-  constructor(private service: AuthenticationService) { }
+  constructor(private service: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
     this.service.authenticate(this.loginUser).subscribe(() => {
-      console.log("Autenticado com sucesso!");
+      this.router.navigate(["mangas"])
     }, (error) => {
       alert("Usuário ou senha inválido")
       console.log(error);
