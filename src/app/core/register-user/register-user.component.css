@@ -1,0 +1,37 @@
+:host {
+    --colors-orange-base: rgb(244, 117, 33);
+    --colors-orange-brught: rgb(255, 148, 77);
+    --colors-scooter: rgb(42, 189, 187);
+}
+
+.title-register {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.checkScan {
+    border: 0.125rem solid var(--colors-scooter);
+}
+
+.button-register {
+    background-color: var(--colors-orange-base);
+    font-size: 0.875rem;
+}
+
+.button-register:hover {
+    background-color: var(--colors-orange-brught);
+}
+
+.question-account-login {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.login {
+    color: var(--colors-orange-base);
+    text-decoration: none;
+}
+
+.login:hover {
+    text-decoration: underline;
+}

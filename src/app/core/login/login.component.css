@@ -5,6 +5,11 @@
     --colors-scarpa-flow: rgb(89, 89, 91);
 }
 
+.title-login {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
 .button-login {
     background-color: var(--colors-orange-base);
     font-size: 0.875rem;
@@ -27,6 +32,7 @@
 
 .question-account {
     font-size: 1.125rem;
+    font-weight: 500;
 }
 
 .register {
