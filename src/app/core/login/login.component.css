@@ -1,0 +1,39 @@
+:host {
+    --colors-orange-base: rgb(244, 117, 33);
+    --colors-orange-brught: rgb(255, 148, 77);
+    --colors-silver-chalice: rgb(160, 160, 160);
+    --colors-scarpa-flow: rgb(89, 89, 91);
+}
+
+.button-login {
+    background-color: var(--colors-orange-base);
+    font-size: 0.875rem;
+}
+
+.button-login:hover {
+    background-color: var(--colors-orange-brught);
+}
+
+.question-password {
+    font-size: 0.875rem;
+    color: var(--colors-silver-chalice);
+    transition: 0.5s;
+}
+
+.question-password:hover {
+    color: var(--colors-scarpa-flow);
+    transition: 0.5s;
+}
+
+.question-account {
+    font-size: 1.125rem;
+}
+
+.register {
+    color: var(--colors-orange-base);
+    text-decoration: none;
+}
+
+.register:hover { 
+    text-decoration: underline;
+}
