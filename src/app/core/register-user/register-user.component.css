@@ -9,10 +9,6 @@
     font-weight: 500;
 }
 
-.checkScan {
-    border: 0.125rem solid var(--colors-scooter);
-}
-
 .button-register {
     background-color: var(--colors-orange-base);
     font-size: 0.875rem;

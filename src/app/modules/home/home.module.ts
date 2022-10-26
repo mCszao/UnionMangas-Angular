@@ -4,6 +4,10 @@ import { HomeComponent } from './home.component';
 import { RegisterUserComponent } from 'src/app/core/register-user/register-user.component';
 import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
 import { NavMenuComponent } from 'src/app/shared/components/navbar/nav-menu/nav-menu.component';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,8 +24,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
-
+    FormsModule,
+    CardModule,
+    InputTextModule,
+    CheckboxModule,
+    ButtonModule
   ]
 })
 export class HomeModule { }

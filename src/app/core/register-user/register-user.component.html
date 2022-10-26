@@ -1,34 +1,42 @@
-<h1 class="text-center fw-normal title-register text-capitalize">criar conta</h1>
+<form (ngSubmit)="register()">
+  <p-card>
+    <ng-template pTemplate="header">
+      <h1 class="text-center font-normal title-register capitalize">criar conta</h1>
+    </ng-template>
 
-<div class="row justify-content-center">
-  <section class="col-12 col-lg-6">
-    <form (ngSubmit)="register()">
-      <div class="form-group">
-        <label for="inputEmail" class="form-label">Usuário*</label>
-        <input type="email" class="form-control" id="inputEmail" [(ngModel)]="registerUser.userName" name="userName" />
+    <ng-template pTemplate="content">
+      <div class="">
+        <span class="p-float-label">
+          <input type="text" id="inputUser" pInputText [(ngModel)]="registerUser.userName" name="userName">
+          <label for="inputtext">Usuário</label>
+        </span>
       </div>
 
-      <div class="form-group mt-3">
-        <label for="inputPassword" class="form-label">Senha*</label>
-        <input type="password" class="form-control" id="inputPassword" [(ngModel)]="registerUser.password"
-          name="password" />
+      <div class="">
+        <span class="p-float-label">
+          <input type="password" id="inputPassword" pInputText [(ngModel)]="registerUser.password" name="password">
+          <label for="inputtext">Usuário</label>
+        </span>
       </div>
 
-      <div class="form-check mt-3">
-        <input type="checkbox" class="form-check-input text-warning checkScan" id="exampleCheck1" [(ngModel)]="registerUser.scan" name="scan">
-        <span class="form-check-label" for="exampleCheck1">Você é um scan?</span>
+      <div class="field-checkbox">
+        <p-checkbox [(ngModel)]="registerUser.scan" [binary]="true" name="scan"></p-checkbox>
+        <label for="binary">Você é um scan?</label>
       </div>
 
-      <div class="d-grid gap-2 col-12 col-lg-6 mx-auto m-3">
-        <button type="submit" class="btn button-register text-uppercase fw-bold ">criar conta</button>
+      <div>
+        <button pButton type="submit" label="criar conta"
+          class="capitalize button-register border-none font-bold"></button>
       </div>
+    </ng-template>
 
+    <ng-template pTemplate="footer">
       <div class="text-center">
         <span class="question-account-login ">
           Jà possui uma conta?
           <a href="" class="login fw-bold text-capitalize">login</a>
         </span>
       </div>
-    </form>
-  </section>
-</div>
+    </ng-template>
+  </p-card>
+</form>
