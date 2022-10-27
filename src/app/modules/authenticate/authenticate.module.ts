@@ -8,7 +8,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     CardModule,
     InputTextModule,
     CheckboxModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthenticateModule { }

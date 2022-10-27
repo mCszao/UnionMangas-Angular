@@ -5,11 +5,11 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "home"
+    redirectTo: "authenticate"
   },
   {
-    path: "home",
-    loadChildren: () => import("./modules/home/home.module").then((module) => module.HomeModule)
+    path: "authenticate",
+    loadChildren: () => import("./modules/authenticate/authenticate.module").then((module) => module.AuthenticateModule)
   },
   {
     path: "mangas",

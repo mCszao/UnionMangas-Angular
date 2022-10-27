@@ -12,8 +12,12 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  registerUser(register: IRegisterUser): Observable<IRegisterUser> {
-    return this.http.post<IRegisterUser>(`${this.API}/auth/create`, register)
+  // registerUser(register: IRegisterUser): Observable<IRegisterUser> {
+  //   return this.http.post<IRegisterUser>(`${this.API}/auth/create`, register)
+  // }
+
+  save(register: IRegisterUser, isScan: boolean) {
+    this.http.post(`${this.API}/auth/create?isScan=${isScan}`, register).toPromise();
   }
 
 }

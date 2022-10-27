@@ -1,4 +1,4 @@
-<form (ngSubmit)="register()" class="flex flex-wrap align-items-center justify-content-center">
+<form (ngSubmit)="register()" class="flex flex-wrap align-items-center justify-content-center" [formGroup]="form">
     <p-card>
         <ng-template pTemplate="header">
             <h1 class="text-center font-normal title-register capitalize -mb-3">criar conta</h1>
@@ -7,14 +7,14 @@
         <ng-template pTemplate="content">
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="email" id="inputEmail" pInputText [(ngModel)]="registerUser.email" name="email">
+                    <input type="email" id="inputEmail" pInputText formControlName="email" name="email">
                     <label for="inputEmail" class="capitalize">email</label>
                 </span>
             </div>
 
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="text" id="inputFullName" pInputText [(ngModel)]="registerUser.fullName"
+                    <input type="text" id="inputFullName" pInputText formControlName="fullName"
                         name="fullName">
                     <label for="inputFullName" class="capitalize">nome completo</label>
                 </span>
@@ -22,14 +22,14 @@
 
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="password" id="inputPassword" pInputText [(ngModel)]="registerUser.password"
+                    <input type="password" id="inputPassword" pInputText formControlName="password"
                         name="password">
                     <label for="inputPassword" class="capitalize">senha</label>
                 </span>
             </div>
 
             <div class="field-checkbox m-5">
-                <p-checkbox [binary]="true" name="scan" inputId="binary"></p-checkbox>
+                <p-checkbox [binary]="true" name="scan" inputId="binary" formControlName="scan"></p-checkbox>
                 <label for="binary">Você é um scan?</label>
             </div>
 
