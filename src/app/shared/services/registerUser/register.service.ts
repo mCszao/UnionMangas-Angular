@@ -1,5 +1,5 @@
+import { IRegisterUser } from './../../interface/IRegisterUser';
 import { Observable } from 'rxjs';
-import { ILogin } from '../../interface/ILogin';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
@@ -12,8 +12,8 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  registerUser(register: ILogin): Observable<ILogin> {
-    return this.http.post<ILogin>(`${this.API}/auth/create`, register)
+  registerUser(register: IRegisterUser): Observable<IRegisterUser> {
+    return this.http.post<IRegisterUser>(`${this.API}/auth/create`, register)
   }
 
 }

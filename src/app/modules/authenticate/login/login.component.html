@@ -1,33 +1,42 @@
-<h1 class="text-center title-login">Login</h1>
+<form (ngSubmit)="login()" class="flex flex-wrap align-items-center justify-content-center">
+    <p-card>
+        <ng-template pTemplate="header">
+            <h1 class="text-center font-normal title-login capitalize -mb-3">Login</h1>
+        </ng-template>
 
-<div class="row justify-content-center">
-    <section class="col-12 col-lg-6">
-        <form (ngSubmit)="login()">
-            <div class="form-group">
-                <label for="Email" class="form-label">Usuário*</label>
-                <input type="email" class="form-control" id="Email" [(ngModel)]="loginUser.userName" name="userName">
+        <ng-template pTemplate="content">
+            <div class="m-5">
+                <span class="p-float-label">
+                    <input type="text" id="inputUser" pInputText [(ngModel)]="loginUser.userName" name="userName">
+                    <label for="inputUser" class="capitalize">Usuário</label>
+                </span>
             </div>
 
-            <div class="form-group mt-3">
-                <label for="Password" class="form-label">Senha*</label>
-                <input type="password" class="form-control" id="Password" [(ngModel)]="loginUser.password"
-                    name="password">
+            <div class="m-5">
+                <span class="p-float-label">
+                    <input type="text" id="inputPasswordLogin" pInputText [(ngModel)]="loginUser.password"
+                        name="password">
+                    <label for="inputPasswordLogin" class="capitalize">Senha</label>
+                </span>
             </div>
 
-            <div class="d-grid gap-2 col-12 col-lg-6 mx-auto m-4">
-                <button type="submit" class="btn button-login fw-bold text-uppercase">login</button>
+            <div class="flex align-items-center justify-content-center">
+                <button pButton type="submit" label="login"
+                    class="capitalize button-login border-none font-bold text-800 col-6"></button>
             </div>
+        </ng-template>
 
+        <ng-template pTemplate="footer">
             <div class="text-center">
-                <a href="" class="text-decoration-none fw-bold question-password"><span>ESQUECEU A SENHA?</span></a>
+                <a href="" class="no-underline font-bold question-password"><span>ESQUECEU A SENHA?</span></a>
 
                 <div>
                     <span class="question-account">
                         Não possui conta?
-                        <a href="" class="register fw-bold">Crie a sua</a>
+                        <a href="" class="register font-bold">Crie a sua</a>
                     </span>
                 </div>
             </div>
-        </form>
-    </section>
-</div>
+        </ng-template>
+    </p-card>
+</form>

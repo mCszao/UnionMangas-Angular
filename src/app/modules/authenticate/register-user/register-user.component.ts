@@ -9,18 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterUserComponent implements OnInit {
   registerUser: IRegisterUser = {
-    userName: "",
-    password: "",
-    readerDto: {
-      email: "",
-      birthdate: new Date(),
-      quantityRead: 0,
-    },
-    scan: false
+    email: "",
+    fullName: "",
+    password: ""
   }
 
-  constructor(
-    private service: RegisterService) { }
+  constructor(private service: RegisterService) { }
 
   ngOnInit() {
   }

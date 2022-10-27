@@ -7,8 +7,16 @@
         <ng-template pTemplate="content">
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="text" id="inputUser" pInputText [(ngModel)]="registerUser.userName" name="userName">
-                    <label for="inputtext">Usuário</label>
+                    <input type="email" id="inputEmail" pInputText [(ngModel)]="registerUser.email" name="email">
+                    <label for="inputEmail" class="capitalize">email</label>
+                </span>
+            </div>
+
+            <div class="m-5">
+                <span class="p-float-label">
+                    <input type="text" id="inputFullName" pInputText [(ngModel)]="registerUser.fullName"
+                        name="fullName">
+                    <label for="inputFullName" class="capitalize">nome completo</label>
                 </span>
             </div>
 
@@ -16,18 +24,18 @@
                 <span class="p-float-label">
                     <input type="password" id="inputPassword" pInputText [(ngModel)]="registerUser.password"
                         name="password">
-                    <label for="inputtext">Senha</label>
+                    <label for="inputPassword" class="capitalize">senha</label>
                 </span>
             </div>
 
             <div class="field-checkbox m-5">
-                <p-checkbox [(ngModel)]="registerUser.scan" [binary]="true" name="scan" inputId="binary"></p-checkbox>
+                <p-checkbox [binary]="true" name="scan" inputId="binary"></p-checkbox>
                 <label for="binary">Você é um scan?</label>
             </div>
 
             <div class="flex align-items-center justify-content-center">
                 <button pButton type="submit" label="criar conta"
-                    class="capitalize button-register border-none font-bold text-800 "></button>
+                    class="capitalize button-register border-none font-bold text-800 col-6"></button>
             </div>
         </ng-template>
 
@@ -35,7 +43,7 @@
             <div class="text-center">
                 <span class="question-account-login ">
                     Jà possui uma conta?
-                    <a routerLink="/login" class="login fw-bold capitalize">login</a>
+                    <a routerLink="/login" class="login font-bold capitalize">login</a>
                 </span>
             </div>
         </ng-template>
