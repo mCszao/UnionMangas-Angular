@@ -5,19 +5,15 @@
     </ng-template>
 
     <ng-template pTemplate="content">
-      <div class="">
         <span class="p-float-label">
           <input type="text" id="inputUser" pInputText [(ngModel)]="registerUser.userName" name="userName">
           <label for="inputtext">Usuário</label>
         </span>
-      </div>
 
-      <div class="">
         <span class="p-float-label">
           <input type="password" id="inputPassword" pInputText [(ngModel)]="registerUser.password" name="password">
           <label for="inputtext">Usuário</label>
         </span>
-      </div>
 
       <div class="field-checkbox">
         <p-checkbox [(ngModel)]="registerUser.scan" [binary]="true" name="scan"></p-checkbox>
