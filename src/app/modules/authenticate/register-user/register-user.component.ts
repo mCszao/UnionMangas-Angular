@@ -1,5 +1,5 @@
-import { IRegisterUser } from './../../shared/interface/IRegisterUser';
-import { RegisterService } from './../../shared/services/registerUser/register.service';
+import { RegisterService } from './../../../shared/services/registerUser/register.service';
+import { IRegisterUser } from './../../../shared/interface/IRegisterUser';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

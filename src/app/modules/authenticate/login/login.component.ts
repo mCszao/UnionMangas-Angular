@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
-import { AuthenticationService } from './../../shared/services/login/authentication.service';
-import { ILogin } from '../../shared/interface/ILogin';
+import { AuthenticationService } from './../../../shared/services/login/authentication.service';
+import { ILogin } from './../../../shared/interface/ILogin';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -27,5 +27,4 @@ export class LoginComponent implements OnInit {
       console.log(error);
     })
   }
-
 }

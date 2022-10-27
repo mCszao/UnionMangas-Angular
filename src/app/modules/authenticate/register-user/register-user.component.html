@@ -1,0 +1,43 @@
+<form (ngSubmit)="register()" class="flex flex-wrap align-items-center justify-content-center">
+    <p-card>
+        <ng-template pTemplate="header">
+            <h1 class="text-center font-normal title-register capitalize -mb-3">criar conta</h1>
+        </ng-template>
+
+        <ng-template pTemplate="content">
+            <div class="m-5">
+                <span class="p-float-label">
+                    <input type="text" id="inputUser" pInputText [(ngModel)]="registerUser.userName" name="userName">
+                    <label for="inputtext">Usuário</label>
+                </span>
+            </div>
+
+            <div class="m-5">
+                <span class="p-float-label">
+                    <input type="password" id="inputPassword" pInputText [(ngModel)]="registerUser.password"
+                        name="password">
+                    <label for="inputtext">Senha</label>
+                </span>
+            </div>
+
+            <div class="field-checkbox m-5">
+                <p-checkbox [(ngModel)]="registerUser.scan" [binary]="true" name="scan" inputId="binary"></p-checkbox>
+                <label for="binary">Você é um scan?</label>
+            </div>
+
+            <div class="flex align-items-center justify-content-center">
+                <button pButton type="submit" label="criar conta"
+                    class="capitalize button-register border-none font-bold text-800 "></button>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+            <div class="text-center">
+                <span class="question-account-login ">
+                    Jà possui uma conta?
+                    <a routerLink="/login" class="login fw-bold capitalize">login</a>
+                </span>
+            </div>
+        </ng-template>
+    </p-card>
+</form>
