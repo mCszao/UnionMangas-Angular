@@ -11,6 +11,11 @@ export class RegisterUserComponent implements OnInit {
   registerUser: IRegisterUser = {
     userName: "",
     password: "",
+    readerDto: {
+      email: "",
+      birthdate: new Date(),
+      quantityRead: 0,
+    },
     scan: false
   }
 

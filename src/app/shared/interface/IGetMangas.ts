@@ -1,7 +1,7 @@
-import { IGenre } from './IGenre';
+import { ICategories } from './ICategories';
 export interface IGetMangas {
     idManga: number,
     mainTitle: string,
     linkImage: string,
-    genres: IGenre[]
+    categories: ICategories[]
 }

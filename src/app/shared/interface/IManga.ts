@@ -1,4 +1,4 @@
-import { IGenre } from './IGenre';
+import { ICategories } from './ICategories';
 import { IAuthor } from "./IAuthor";
 
 export interface IManga {
@@ -14,5 +14,5 @@ export interface IManga {
     releaseDate: Date,
     lastUpdate: Date,
     authors: IAuthor[],
-    genres: IGenre[]
+    categories: ICategories[]
 }
