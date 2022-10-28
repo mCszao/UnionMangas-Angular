@@ -1,49 +1,51 @@
-<div class="flex flex-wrap align-items-center justify-content-center" [formGroup]="formRegister">
-    <p-card>
-        <ng-template pTemplate="header">
-            <h1 class="text-center font-normal title-register capitalize -mb-3">criar conta</h1>
-        </ng-template>
+<section>
+    <div class="flex flex-wrap align-items-center justify-content-center" [formGroup]="formRegister">
+        <p-card>
+            <ng-template pTemplate="header">
+                <h1 class="text-center font-normal title-register capitalize -mb-3">criar conta</h1>
+            </ng-template>
 
-        <ng-template pTemplate="content">
-            <div class="m-5">
-                <span class="p-float-label">
-                    <input type="email" pInputText formControlName="email" name="email">
-                    <label for="inputEmail" class="capitalize">email</label>
-                </span>
-            </div>
+            <ng-template pTemplate="content">
+                <div class="m-5">
+                    <span class="p-float-label">
+                        <input type="email" pInputText formControlName="email" name="email">
+                        <label for="inputEmail" class="capitalize">email</label>
+                    </span>
+                </div>
 
-            <div class="m-5">
-                <span class="p-float-label">
-                    <input type="text" pInputText formControlName="fullName" name="fullName">
-                    <label for="inputFullName" class="capitalize">nome completo</label>
-                </span>
-            </div>
+                <div class="m-5">
+                    <span class="p-float-label">
+                        <input type="text" pInputText formControlName="fullName" name="fullName">
+                        <label for="inputFullName" class="capitalize">nome completo</label>
+                    </span>
+                </div>
 
-            <div class="m-5">
-                <span class="p-float-label">
-                    <input type="password" pInputText formControlName="password" name="password">
-                    <label for="inputPassword" class="capitalize">senha</label>
-                </span>
-            </div>
+                <div class="m-5">
+                    <span class="p-float-label">
+                        <input type="password" pInputText formControlName="password" name="password">
+                        <label for="inputPassword" class="capitalize">senha</label>
+                    </span>
+                </div>
 
-            <div class="field-checkbox m-5">
-                <p-checkbox [binary]="true" name="scan" inputId="binary" formControlName="scan"></p-checkbox>
-                <label for="binary">Você é um scan?</label>
-            </div>
+                <div class="field-checkbox m-5">
+                    <p-checkbox [binary]="true" name="scan" inputId="binary" formControlName="scan"></p-checkbox>
+                    <label for="binary">Você é um scan?</label>
+                </div>
 
-            <div class="flex align-items-center justify-content-center">
-                <button pButton type="submit" label="criar conta" (click)="register()"
-                    class="capitalize button-register border-none font-bold text-800 col-6"></button>
-            </div>
-        </ng-template>
+                <div class="flex align-items-center justify-content-center">
+                    <button pButton type="submit" label="criar conta" (click)="register()"
+                        class="capitalize button-register border-none font-bold text-800 col-6"></button>
+                </div>
+            </ng-template>
 
-        <ng-template pTemplate="footer">
-            <div class="text-center -mt-3">
-                <span class="question-account-login ">
-                    Jà possui uma conta?
-                    <a routerLink="/login" class="login font-bold capitalize">login</a>
-                </span>
-            </div>
-        </ng-template>
-    </p-card>
-</div>
+            <ng-template pTemplate="footer">
+                <div class="text-center -mt-3">
+                    <span class="question-account-login ">
+                        Jà possui uma conta?
+                        <a routerLink="/login" class="login font-bold capitalize">login</a>
+                    </span>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</section>
