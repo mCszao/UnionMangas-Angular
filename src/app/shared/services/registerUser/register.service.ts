@@ -10,14 +10,9 @@ import { Injectable } from '@angular/core';
 export class RegisterService {
   private readonly API = environment.API_PATH;
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  // registerUser(register: IRegisterUser): Observable<IRegisterUser> {
-  //   return this.http.post<IRegisterUser>(`${this.API}/auth/create`, register)
-  // }
-
-  save(register: IRegisterUser, isScan: boolean) {
-    this.http.post(`${this.API}/auth/create?isScan=${isScan}`, register).toPromise();
+  registerUser(register: IRegisterUser, isScan: boolean): Observable<IRegisterUser> {
+    return this.httpClient.post<IRegisterUser>(`${this.API}/auth/create?isScan=${isScan}`, register)
   }
-
 }

@@ -14,13 +14,13 @@ export class LoginComponent implements OnInit {
     password: ""
   }
 
-  constructor(private service: AuthenticationService, private router: Router) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.service.authenticate(this.loginUser).subscribe(() => {
+    this.authenticationService.authenticate(this.loginUser).subscribe(() => {
       this.router.navigate(["mangas"])
     }, (error) => {
       alert("Usuário ou senha inválido")

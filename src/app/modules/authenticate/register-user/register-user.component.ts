@@ -1,5 +1,4 @@
 import { RegisterService } from './../../../shared/services/registerUser/register.service';
-import { IRegisterUser } from './../../../shared/interface/IRegisterUser';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -9,32 +8,26 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-
-  userSave: IRegisterUser = {} as IRegisterUser
-
-  form!: FormGroup;
+  formUser: FormGroup;
 
   constructor(
-    private service: RegisterService,
+    private registerService: RegisterService,
     private formBuilder: FormBuilder
-    ) {
-      this.form = this.formBuilder.group(
-        {
-          email:[''],
-          fullName:[''],
-          password:[''],
-          scan:['']
-        }
-      )
-     }
+  ) {
+    this.formUser = this.formBuilder.group(
+      {
+        email: [''],
+        fullName: [''],
+        password: [''],
+        scan: [false]
+      }
+    )
+  }
 
   ngOnInit() {
   }
 
   register() {
-    this.userSave.email = this.form.value.email;
-    this.userSave.fullName = this.form.value.fullName;
-    this.userSave.password = this.form.value.password;
-    this.service.save(this.userSave, this.form.value.scan);
+    this.registerService.registerUser(this.formUser.value, this.formUser.value.scan);
   }
 }

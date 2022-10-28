@@ -1,4 +1,4 @@
-<form (ngSubmit)="register()" class="flex flex-wrap align-items-center justify-content-center" [formGroup]="form">
+<form (ngSubmit)="register()" class="flex flex-wrap align-items-center justify-content-center" [formGroup]="formUser">
     <p-card>
         <ng-template pTemplate="header">
             <h1 class="text-center font-normal title-register capitalize -mb-3">criar conta</h1>
@@ -7,14 +7,14 @@
         <ng-template pTemplate="content">
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="email" id="inputEmail" pInputText formControlName="email" name="email">
+                    <input type="email" pInputText formControlName="email" name="email">
                     <label for="inputEmail" class="capitalize">email</label>
                 </span>
             </div>
 
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="text" id="inputFullName" pInputText formControlName="fullName"
+                    <input type="text" pInputText formControlName="fullName"
                         name="fullName">
                     <label for="inputFullName" class="capitalize">nome completo</label>
                 </span>
@@ -22,7 +22,7 @@
 
             <div class="m-5">
                 <span class="p-float-label">
-                    <input type="password" id="inputPassword" pInputText formControlName="password"
+                    <input type="password" pInputText formControlName="password"
                         name="password">
                     <label for="inputPassword" class="capitalize">senha</label>
                 </span>
@@ -40,7 +40,7 @@
         </ng-template>
 
         <ng-template pTemplate="footer">
-            <div class="text-center">
+            <div class="text-center -mt-3">
                 <span class="question-account-login ">
                     Jà possui uma conta?
                     <a routerLink="/login" class="login font-bold capitalize">login</a>

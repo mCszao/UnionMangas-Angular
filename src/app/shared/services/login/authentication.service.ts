@@ -10,9 +10,9 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
   private readonly API = environment.API_PATH;
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   authenticate(loginUser: ILogin): Observable<ILogin> {
-    return this.http.post<ILogin>(`${this.API}/auth/signin`, loginUser)
+    return this.httpClient.post<ILogin>(`${this.API}/auth/signin`, loginUser)
   }
 }
