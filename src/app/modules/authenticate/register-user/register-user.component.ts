@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { RegisterService } from './../../../shared/services/registerUser/register.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -8,13 +9,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-  formUser: FormGroup;
+  formRegister: FormGroup;
 
   constructor(
     private registerService: RegisterService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
-    this.formUser = this.formBuilder.group(
+    this.formRegister = this.formBuilder.group(
       {
         email: [''],
         fullName: [''],
@@ -28,6 +30,9 @@ export class RegisterUserComponent implements OnInit {
   }
 
   register() {
-    this.registerService.registerUser(this.formUser.value, this.formUser.value.scan);
+    this.registerService.registerUser(this.formRegister.value, this.formRegister.value.scan).subscribe(() => [
+      this.router.navigate(["mangas"])
+    ])
+    this.formRegister.reset()
   }
 }
