@@ -1,3 +1,8 @@
-<nav class="bg-black-alpha-90">
-asd
-</nav>
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <img src="assets/primeng.svg" class="mr-2 h-3rem">
+    </ng-template>
+    <ng-template pTemplate="end">
+        <app-nav-menu></app-nav-menu>
+    </ng-template>
+</p-menubar>

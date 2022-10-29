@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './nav-menu.component.html',
 })
 export class NavMenuComponent implements OnInit {
- 
+  display: boolean = false; 
+  
   constructor() { }
 
   ngOnInit() {

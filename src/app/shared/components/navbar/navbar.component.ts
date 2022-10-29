@@ -8,7 +8,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class NavbarComponent implements OnInit {
   items: MenuItem[] = [];
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -82,26 +82,6 @@ export class NavbarComponent implements OnInit {
             icon: 'pi pi-fw pi-user-minus',
 
           },
-          {
-            label: 'Search',
-            icon: 'pi pi-fw pi-users',
-            items: [
-              {
-                label: 'Filter',
-                icon: 'pi pi-fw pi-filter',
-                items: [
-                  {
-                    label: 'Print',
-                    icon: 'pi pi-fw pi-print'
-                  }
-                ]
-              },
-              {
-                icon: 'pi pi-fw pi-bars',
-                label: 'List'
-              }
-            ]
-          }
         ]
       },
       {

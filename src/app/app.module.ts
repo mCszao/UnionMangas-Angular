@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { InputTextModule } from 'primeng/inputtext';
     AuthenticateModule,
     SidebarModule,
     MenubarModule,
-    InputTextModule
+    InputTextModule,
+    ButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
