@@ -1,6 +1,6 @@
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './../../../shared/services/login/authentication.service';
+import { LoginService } from '../../../shared/services/login/login.service';
 import { ILogin } from './../../../shared/interface/ILogin';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
 
   constructor(
-    private authenticationService: AuthenticationService,
+    private loginService: LoginService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authenticationService.authenticate(this.formLogin.value).subscribe(() => {
+    this.loginService.login(this.formLogin.value).subscribe(() => {
       this.router.navigate(["mangas"])
     }, (error) => {
       alert("Usuário ou senha inválido")
