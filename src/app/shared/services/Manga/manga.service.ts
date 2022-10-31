@@ -1,7 +1,7 @@
 import { IPage } from './../../interface/IPage';
 import { IGetMangas } from './../../interface/IGetMangas';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http"
+import { HttpClient } from "@angular/common/http"
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
@@ -13,10 +13,11 @@ export class MangaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  listManga(): Observable<IPage<IGetMangas[]>> {
-    const headersnew = new HttpHeaders({
-      "content-type": "application/json"
-    })
-    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas`, { headers: headersnew })
+  findAllMangas(): Observable<IPage<IGetMangas[]>> {
+    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas`)
+  }
+
+  releaseWeek(): Observable<IPage<IGetMangas[]>> {
+    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas/week`)
   }
 }

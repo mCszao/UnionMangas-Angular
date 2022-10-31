@@ -1,3 +1,5 @@
+import { IGetMangas } from './../../../shared/interface/IGetMangas';
+import { MangaService } from './../../../shared/services/Manga/manga.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-manga.component.css']
 })
 export class ListMangaComponent implements OnInit {
+  responseManga: IGetMangas[] = []
 
-  constructor() { }
+  constructor(
+    private mangaService: MangaService,
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.mangaService.releaseWeek().subscribe(response => {
+      this.responseManga = response.data
+    })
   }
 
 }
