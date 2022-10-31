@@ -1,13 +1,14 @@
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../shared/services/login/login.service';
-import { ILogin } from './../../../shared/interface/ILogin';
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
   formLogin: FormGroup;
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private messageService: MessageService
   ) {
     this.formLogin = this.formBuilder.group(
       {
@@ -28,11 +30,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  showError() {
+    this.messageService.add({ severity: "error", summary: "Erro", detail: "Login ou senha inválidos!" });
+  }
+
   login() {
     this.loginService.login(this.formLogin.value).subscribe(() => {
       this.router.navigate(["mangas"])
     }, (error) => {
-      alert("Usuário ou senha inválido")
+      this.showError()
       console.log(error);
     })
   }

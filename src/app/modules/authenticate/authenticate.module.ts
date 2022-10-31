@@ -9,6 +9,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InputTextModule,
     CheckboxModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule
   ]
 })
 export class AuthenticateModule { }
