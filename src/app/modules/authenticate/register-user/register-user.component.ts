@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 
-
 @Component({
   selector: 'app-register-user',
   templateUrl: './register-user.component.html',
@@ -38,6 +37,8 @@ export class RegisterUserComponent implements OnInit {
   }
 
   register() {
+    console.log(this.formRegister.value);
+
     this.registerService.registerUser(this.formRegister.value, this.formRegister.value.scan).subscribe(() => [
       this.router.navigate(["mangas"])
     ], (error) => {
@@ -45,6 +46,5 @@ export class RegisterUserComponent implements OnInit {
       console.log(error);
     })
     this.formRegister.reset()
-
   }
 }

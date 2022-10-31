@@ -4,6 +4,10 @@
     --colors-scooter: rgb(42, 189, 187);
 }
 
+.card-register {
+    margin-top: 10em;
+}
+
 .title-register {
     font-size: 1.75rem;
     font-weight: 500;
