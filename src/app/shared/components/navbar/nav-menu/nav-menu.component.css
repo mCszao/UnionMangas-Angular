@@ -1,0 +1,9 @@
+:host {
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --bs-navbar-toggler-icon-bg: rgba(255, 255, 255, 0.55);
+}
+
+.border-menu {
+    border-color: var(--bs-navbar-toggler-border-color);
+    color: var(--bs-navbar-toggler-icon-bg);
+}

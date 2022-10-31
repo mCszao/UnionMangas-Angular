@@ -1,7 +1,16 @@
 :host {
     --colors-black: #000000;
+    --bs-navbar-color: rgba(255, 255, 255, 0.55);
+    --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
 }
 
 .nav-color {
     background-color: var(--colors-black);
+    color: var(--bs-navbar-color);
+    transition: 0.5s;
+}
+
+.nav-color:hover {
+    color: var(--bs-navbar-hover-color);
+    transition: 0.5s;
 }
