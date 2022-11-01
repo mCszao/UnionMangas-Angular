@@ -1,3 +1,4 @@
+import { IRegisterUser } from './../../../shared/interface/IRegisterUser';
 import { Router } from '@angular/router';
 import { RegisterService } from './../../../shared/services/registerUser/register.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,14 +12,16 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService]
 })
 export class RegisterUserComponent implements OnInit {
-  formRegister: FormGroup;
+  formRegister!: FormGroup;
 
   constructor(
     private registerService: RegisterService,
     private formBuilder: FormBuilder,
     private router: Router,
     private messageService: MessageService
-  ) {
+  ) { }
+
+  ngOnInit() {
     this.formRegister = this.formBuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
@@ -29,9 +32,6 @@ export class RegisterUserComponent implements OnInit {
     )
   }
 
-  ngOnInit() {
-  }
-
   showError() {
     this.messageService.add({ severity: "error", summary: "Erro", detail: "Preencha todos os campos!" });
   }
@@ -39,8 +39,8 @@ export class RegisterUserComponent implements OnInit {
   register() {
     console.log(this.formRegister.value);
 
-    this.registerService.registerUser(this.formRegister.value, this.formRegister.value.scan).subscribe(() => [
-      this.router.navigate(["mangas"])
+    this.registerService.registerUser(this.formRegister.getRawValue() as IRegisterUser, this.formRegister.value.scan).subscribe(() => [
+      this.router.navigate(["login"])
     ], (error) => {
       this.showError()
       console.log(error);
