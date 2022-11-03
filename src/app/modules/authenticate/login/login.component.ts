@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './../../../shared/interceptors/token.interceptor';
 import { ILogin } from './../../../shared/interface/ILogin';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -35,7 +36,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe(() => {
+    this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe((res: any) => {
+      TokenInterceptor.accessToken = res.token;
+      
       this.router.navigate(["mangas"])
     }, (error) => {
       this.showError()

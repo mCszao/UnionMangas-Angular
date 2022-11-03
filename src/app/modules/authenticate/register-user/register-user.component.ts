@@ -37,14 +37,11 @@ export class RegisterUserComponent implements OnInit {
   }
 
   register() {
-    console.log(this.formRegister.value);
-
-    this.registerService.registerUser(this.formRegister.getRawValue() as IRegisterUser, this.formRegister.value.scan).subscribe(() => [
+    this.registerService.registerUser(this.formRegister.value, this.formRegister.value.scan).subscribe(() => [
       this.router.navigate(["login"])
     ], (error) => {
       this.showError()
       console.log(error);
     })
-    this.formRegister.reset()
   }
 }

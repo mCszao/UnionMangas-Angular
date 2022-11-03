@@ -13,6 +13,6 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   login(loginUser: ILogin): Observable<ILogin> {
-    return this.httpClient.post<ILogin>(`${this.API}/auth/signin`, loginUser)
+    return this.httpClient.post<ILogin>(`${this.API}/auth/signin`, loginUser, {withCredentials: true})
   }
 }
