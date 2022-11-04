@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: "mangas",
-    loadChildren: () => import("./modules/mangas/mangas.module").then((module) => module.MangasModule)
+    loadChildren: () => import("./modules/mangas/mangas.module").then((module) => module.MangasModule),
   }
 ];
 
