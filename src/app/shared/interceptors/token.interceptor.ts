@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let accessToken = localStorage.getItem(environment.Token) || "";
     console.log(accessToken);

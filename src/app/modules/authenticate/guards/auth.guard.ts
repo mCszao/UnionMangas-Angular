@@ -13,11 +13,12 @@ export class AuthGuard implements CanActivate {
   ) { }
 
   canActivate(): boolean {
+    this.loginService.updateLoggedIn();
     if (localStorage.getItem(environment.Token)) {
       return true;
     } else {
-      this.router.navigate(["/login"])
-      return false
+      this.router.navigate(["/login"]);
+      return false;
     }
   }
 
