@@ -14,6 +14,6 @@ import { RegisterMangaComponent } from './register-manga/register-manga.componen
   imports: [
     CommonModule,
     MangasRoutingModule
-  ]
+  ],
 })
 export class MangasModule { }

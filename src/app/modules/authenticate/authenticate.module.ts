@@ -1,3 +1,5 @@
+import { TokenInterceptor } from './../../shared/interceptors/token.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 
@@ -29,6 +31,13 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     ReactiveFormsModule,
     ToastModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ]
 })
 export class AuthenticateModule { }

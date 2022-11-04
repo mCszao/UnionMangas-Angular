@@ -1,3 +1,4 @@
+import { LoginService } from './../../../shared/services/login/login.service';
 import { IGetMangas } from './../../../shared/interface/IGetMangas';
 import { MangaService } from './../../../shared/services/Manga/manga.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,12 +13,17 @@ export class ListMangaComponent implements OnInit {
 
   constructor(
     private mangaService: MangaService,
+    private loginService: LoginService
   ) { }
 
   ngOnInit() {
     this.mangaService.releaseWeek().subscribe(response => {
       this.responseManga = response.data
     })
+  }
+
+  sair() {
+    this.loginService.logout()
   }
 
 }

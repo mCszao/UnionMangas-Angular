@@ -1,6 +1,6 @@
-import { TokenInterceptor } from './../../../shared/interceptors/token.interceptor';
+import { environment } from 'src/environments/environment';
 import { ILogin } from './../../../shared/interface/ILogin';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../shared/services/login/login.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.formLogin = this.formBuilder.group(
       {
-        userName: [""],
-        password: [""]
-      }
+        userName: ["", Validators.required],
+        password: ["", Validators.required]
+      },
     )
   }
 
@@ -36,13 +36,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe((res: any) => {
-      TokenInterceptor.accessToken = res.token;
-      
-      this.router.navigate(["mangas"])
-    }, (error) => {
-      this.showError()
-      console.log(error);
-    })
+    if (this.formLogin.valid) {
+      this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe((res: any) => {
+        localStorage.setItem(environment.Token, res.accessToken)
+        this.router.navigate(["mangas"])
+      }, (error) => {
+        this.showError()
+        console.log(error);
+      })
+    }
   }
 }
