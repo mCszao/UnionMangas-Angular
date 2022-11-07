@@ -4,12 +4,14 @@ import { MangasRoutingModule } from './mangas-routing.module';
 
 import { ListMangaComponent } from './list-manga/list-manga.component';
 import { RegisterMangaComponent } from './register-manga/register-manga.component';
+import { MangaComponent } from './manga/manga.component';
 
 
 @NgModule({
   declarations: [
     ListMangaComponent,
-    RegisterMangaComponent
+    RegisterMangaComponent,
+    MangaComponent
   ],
   imports: [
     CommonModule,

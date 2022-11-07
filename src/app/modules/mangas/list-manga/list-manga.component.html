@@ -1,2 +1,3 @@
-<p>list-manga works!</p>
-<button (click)="sair()">Sair</button>
+<div *ngFor="let manga of responseManga">
+    <app-manga [manga]="manga"></app-manga>
+</div>
