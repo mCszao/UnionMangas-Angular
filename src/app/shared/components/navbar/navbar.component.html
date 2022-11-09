@@ -3,7 +3,7 @@
         Logo
     </div>
 
-    <div class="flex flex-row xl:col-3 justify-content-end">
+    <div class="flex flex-row xl:col-3 justify-content-end" *ngIf="isLoggedIn, else loggedFalse">
         <div class="m-2 align-items-center flex">
             <i class="iconBackground pi pi-sign-out cursor-pointer" (click)="logout()"></i>
         </div>
@@ -12,3 +12,11 @@
         </div>
     </div>
 </div>
+
+<ng-template #loggedFalse>
+    <div class="flex flex-row xl:col-3 justify-content-end">
+        <div class="m-2 align-items-center flex">
+            <i class="iconBackground pi pi-sign-in cursor-pointer" (click)="logout()"></i>
+        </div>
+    </div>
+</ng-template>
