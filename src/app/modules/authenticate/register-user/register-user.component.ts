@@ -12,6 +12,7 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService]
 })
 export class RegisterUserComponent implements OnInit {
+  userForm: IRegisterUser = {} as IRegisterUser;
   formRegister!: FormGroup;
 
   constructor(
@@ -37,13 +38,15 @@ export class RegisterUserComponent implements OnInit {
   }
 
   register() {
-    if (this.formRegister.valid) {
-      this.registerService.registerUser(this.formRegister.value, this.formRegister.value.scan).subscribe(() => [
-        this.router.navigate(["login"])
-      ], (error) => {
-        this.showError()
-        console.log(error);
-      })
-    }
+    this.userForm.email = this.formRegister.value.email;
+    this.userForm.fullName = this.formRegister.value.fullName;
+    this.userForm.password = this.formRegister.value.password;
+    
+    this.registerService.registerUser(this.userForm as IRegisterUser, this.formRegister.value.scan).subscribe(() => [
+      this.router.navigate(["login"])
+    ], (error) => {
+      this.showError()
+      console.log(error);
+    })
   }
 }

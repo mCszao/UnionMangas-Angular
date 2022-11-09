@@ -3,6 +3,7 @@ import { RegisterMangaComponent } from './register-manga/register-manga.componen
 import { ListMangaComponent } from './list-manga/list-manga.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../authenticate/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: "registerManga",
-    component: RegisterMangaComponent
+    component: RegisterMangaComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "manga",

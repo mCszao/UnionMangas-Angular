@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 export class TokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let accessToken = localStorage.getItem(environment.Token) || "";
-    console.log(accessToken);
 
     request = request.clone({
       setHeaders: {
