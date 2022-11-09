@@ -1,3 +1,4 @@
+import { LoginService } from './../../services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
@@ -9,9 +10,13 @@ import { MenuItem } from 'primeng/api';
 export class NavbarComponent implements OnInit {
   items: MenuItem[] = [];
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
 
+  }
+
+  logout() {
+    this.loginService.logout()
   }
 }
