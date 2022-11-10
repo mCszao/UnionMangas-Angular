@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../services/login/login.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
@@ -12,13 +13,20 @@ export class NavbarComponent implements OnInit {
 
   @Input() isLoggedIn: boolean | null = null;
 
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
 
   }
 
-  logout() {
+  logout(): void {
     this.loginService.logout()
+  }
+
+  login(): void {
+    this.router.navigate(["login"])
   }
 }
