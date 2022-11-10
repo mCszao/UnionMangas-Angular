@@ -14,10 +14,10 @@ export class MangaService {
   constructor(private httpClient: HttpClient) { }
 
   findAllMangas(): Observable<IPage<IGetMangas[]>> {
-    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas`)
+    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas`);
   }
 
   releaseWeek(): Observable<IPage<IGetMangas[]>> {
-    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas/week`)
+    return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas/week`);
   }
 }
