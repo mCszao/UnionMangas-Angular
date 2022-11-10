@@ -38,10 +38,11 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.formLogin.valid) {
       this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe((res: any) => {
-        localStorage.setItem(environment.Token, res.accessToken)
-        this.router.navigate(["mangas"])
+        localStorage.setItem(environment.Token, res.accessToken);
+        this.loginService.updateLoggedIn();
+        this.router.navigate(["mangas"]);
       }, (error) => {
-        this.showError()
+        this.showError();
         console.log(error);
       })
     }
