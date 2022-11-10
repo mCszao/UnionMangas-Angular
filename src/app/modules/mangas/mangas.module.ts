@@ -1,3 +1,4 @@
+import { CoreModule } from './../core/core.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MangasRoutingModule } from './mangas-routing.module';
@@ -17,7 +18,8 @@ import { EditMangaComponent } from './edit-manga/edit-manga.component';
   ],
   imports: [
     CommonModule,
-    MangasRoutingModule
+    MangasRoutingModule,
+    CoreModule
   ],
 })
 export class MangasModule { }

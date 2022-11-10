@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-manga.component.css']
 })
 export class RegisterMangaComponent implements OnInit {
-
+  cities!: any[];
   constructor() { }
 
   ngOnInit(): void {

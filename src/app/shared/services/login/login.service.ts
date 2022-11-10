@@ -17,6 +17,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(loginUser: ILogin): Observable<ILogin> {
+    this.updateLoggedIn()
     return this.httpClient.post<ILogin>(`${this.API}/auth/signin`, loginUser)
   }
 

@@ -1,25 +1,20 @@
-<div class="nav-color grid flex align-items-center">
-    <div class="flex justify-content-start xl:col-8 col-8 mr-8 xl:mr-8 m-2">
+<div class="nav-color flex align-items-center justify-content-between">
+    <div class="flex justify-content-start ml-3">
         Logo
     </div>
 
-    <div class="flex flex-row xl:col-3 col-3 justify-content-end" *ngIf="isLoggedIn, else loggedFalse">
-        <div class="m-2 align-items-center flex">
+    <div class="flex flex-row justify-content-end m-2">
+        <div class="flex align-items-center mr-3" *ngIf="isLoggedIn, else loggedFalse">
             <i class="iconBackground pi pi-sign-out cursor-pointer" (click)="logout()"></i>
         </div>
-        <div class="m-2">
+        <div class="mr-3">
             <app-nav-menu></app-nav-menu>
         </div>
     </div>
 </div>
 
 <ng-template #loggedFalse>
-    <div class="flex flex-row xl:col-3 justify-content-end">
-        <div class="m-2 align-items-center flex">
-            <i class="iconBackground pi pi-sign-in cursor-pointer" (click)="login()"></i>
-        </div>
-        <div class="m-2">
-            <app-nav-menu></app-nav-menu>
-        </div>
+    <div class="flex align-items-center">
+        <i class="iconBackground pi pi-sign-in cursor-pointer" (click)="login()"></i>
     </div>
 </ng-template>

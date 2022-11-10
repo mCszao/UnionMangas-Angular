@@ -1,1 +1,77 @@
-<p>register-manga works!</p>
+<h5>Autor</h5>
+<div class="grid p-fluid m-3">
+    <div class="col-12 md:col-4">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">nome</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">Pseudónimo</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de nascimento</label>
+        </span>
+    </div>
+</div>
+
+<h5>Mangá</h5>
+<div class="grid p-fluid m-3">
+    <div class="col-12 md:col-4">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título principal</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título alternativo</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">imagem/link</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-3">
+        <span class="p-float-label">
+            <input type="text" pInputText />
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">descrição</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-3">
+        <span class="p-float-label">
+            <p-calendar inputId="calendar"></p-calendar>
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de lançamento</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-3">
+        <span class="p-float-label">
+            <p-calendar inputId="calendar"></p-calendar>
+            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">última atualização</label>
+        </span>
+    </div>
+
+    <div class="col-12 md:col-3">
+        <span class="p-float-label">
+            <p-multiSelect inputId="multiselect" [options]="cities" optionLabel="name"
+                [filter]="false">
+            </p-multiSelect>
+            <label for="multiselect">MultiSelect</label>
+        </span>
+    </div>
+</div>
