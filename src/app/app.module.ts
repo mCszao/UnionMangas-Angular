@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MangasModule } from './modules/mangas/mangas.module';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AuthenticateModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    MangasModule,
+    AuthenticateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
 import { CoreModule } from './../core/core.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MangasRoutingModule } from './mangas-routing.module';
 
 import { ListMangaComponent } from './list-manga/list-manga.component';
 import { RegisterMangaComponent } from './register-manga/register-manga.component';
@@ -18,8 +17,11 @@ import { EditMangaComponent } from './edit-manga/edit-manga.component';
   ],
   imports: [
     CommonModule,
-    MangasRoutingModule,
     CoreModule
   ],
+  exports: [
+    ListMangaComponent,
+    RegisterMangaComponent,
+  ]
 })
 export class MangasModule { }
