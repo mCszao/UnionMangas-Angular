@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { IManga } from '../../interface/IManga';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class MangaService {
 
   releaseWeek(): Observable<IPage<IGetMangas[]>> {
     return this.httpClient.get<IPage<IGetMangas[]>>(`${this.API}/mangas/week`);
+  }
+
+  newManga(manga: IManga): Observable<IManga> {
+    return this.httpClient.post<IManga>(`${this.API}/mangas`, manga);
   }
 }
