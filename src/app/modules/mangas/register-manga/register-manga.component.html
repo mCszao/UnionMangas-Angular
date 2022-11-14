@@ -1,77 +1,73 @@
 <h5>Autor</h5>
-<div class="grid p-fluid m-3">
-    <div class="col-12 md:col-4">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">nome</label>
-        </span>
+<div>
+    <div class="grid p-fluid m-3">
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="authorObj.name" />
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">nome</label>
+            </span>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="authorObj.pseudonym" />
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">Pseudónimo</label>
+            </span>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <p-calendar inputId="calendar" dataType="string" [(ngModel)]="authorObj.birthdate"></p-calendar>
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de nascimento</label>
+            </span>
+        </div>
     </div>
 
-    <div class="col-12 md:col-4">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">Pseudónimo</label>
-        </span>
-    </div>
+    <h5>Mangá</h5>
+    <div class="grid p-fluid m-3">
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="mangaObj.mainTitle" />
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título principal</label>
+            </span>
+        </div>
 
-    <div class="col-12 md:col-4">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de nascimento</label>
-        </span>
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="mangaObj.linkImage" />
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">imagem/link</label>
+            </span>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="mangaObj.description" />
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">descrição</label>
+            </span>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <p-calendar inputId="calendar" [(ngModel)]="mangaObj.releaseDate" dataType="string"></p-calendar>
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de lançamento</label>
+            </span>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <p-calendar inputId="calendar" [(ngModel)]="mangaObj.lastUpdate" dataType="string"></p-calendar>
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">última atualização</label>
+            </span>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <span class="p-float-label">
+                <p-multiSelect inputId="multiselect" [(ngModel)]="categoryObj.name" [options]="categoires"
+                    optionLabel="name" [filter]="false">
+                </p-multiSelect>
+                <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">categorias</label>
+            </span>
+        </div>
     </div>
 </div>
-
-<h5>Mangá</h5>
-<div class="grid p-fluid m-3">
-    <div class="col-12 md:col-4">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título principal</label>
-        </span>
-    </div>
-
-    <div class="col-12 md:col-4">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título alternativo</label>
-        </span>
-    </div>
-
-    <div class="col-12 md:col-4">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">imagem/link</label>
-        </span>
-    </div>
-
-    <div class="col-12 md:col-3">
-        <span class="p-float-label">
-            <input type="text" pInputText />
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">descrição</label>
-        </span>
-    </div>
-
-    <div class="col-12 md:col-3">
-        <span class="p-float-label">
-            <p-calendar inputId="calendar"></p-calendar>
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de lançamento</label>
-        </span>
-    </div>
-
-    <div class="col-12 md:col-3">
-        <span class="p-float-label">
-            <p-calendar inputId="calendar"></p-calendar>
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">última atualização</label>
-        </span>
-    </div>
-
-    <div class="col-12 md:col-3">
-        <span class="p-float-label">
-            <p-multiSelect inputId="multiselect" [options]="categoires" optionLabel="name"
-                [filter]="false">
-            </p-multiSelect>
-            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">categorias</label>
-        </span>
-    </div>
-</div>
+<button type="submit" (click)="teste()">Teste</button>

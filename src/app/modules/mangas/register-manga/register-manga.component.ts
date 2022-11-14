@@ -1,3 +1,5 @@
+import { IManga } from './../../../shared/interface/IManga';
+import { IAuthor } from './../../../shared/interface/IAuthor';
 import { ICategories } from './../../../shared/interface/ICategories';
 import { CategoiresService } from './../../../shared/services/categoires/categoires.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,16 +12,35 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterMangaComponent implements OnInit {
   categoires: ICategories[] = [];
 
-  constructor(private categoiresService: CategoiresService) { }
+  mangaObj: IManga = {} as IManga;
+  authorObj: IAuthor = {} as IAuthor;
+  categoryObj: ICategories = {} as ICategories;
+
+  constructor(
+    private categoiresService: CategoiresService,
+  ) { }
 
   ngOnInit(): void {
     this.categoiresService.findAllCategory().subscribe(response => {
       this.categoires = response.data;
       console.log(response.data.map(teste => {
         console.log(teste.name[0].toUpperCase() + teste.name.slice(1).toLowerCase());
-        
+
       }));
     })
+  }
+
+  teste() {
+    const authorArray = [];
+    const categoryArray = [];
+    authorArray.push(this.authorObj);
+    categoryArray.push(this.categoryObj);
+
+    this.mangaObj.authors = authorArray;
+    this.mangaObj.categories = categoryArray;
+
+    console.log(this.mangaObj);
+
   }
 
 }
