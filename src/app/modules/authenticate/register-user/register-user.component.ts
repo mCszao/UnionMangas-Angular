@@ -37,7 +37,7 @@ export class RegisterUserComponent implements OnInit {
     this.messageService.add({ severity: "error", summary: "Erro", detail: "Preencha todos os campos!" });
   }
 
-  register() {
+  saveUser() {
     this.userForm.email = this.formRegister.value.email;
     this.userForm.fullName = this.formRegister.value.fullName;
     this.userForm.password = this.formRegister.value.password;

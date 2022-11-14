@@ -30,7 +30,7 @@ export class RegisterMangaComponent implements OnInit {
     })
   }
 
-  teste() {
+  saveManga() {
     const authorArray = [];
     const categoryArray = [];
     authorArray.push(this.authorObj);
