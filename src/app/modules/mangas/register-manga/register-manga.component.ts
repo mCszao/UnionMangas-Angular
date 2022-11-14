@@ -37,9 +37,10 @@ export class RegisterMangaComponent implements OnInit {
   saveManga() {
     const authorArray = [];
     authorArray.push(this.authorObj);
-
     this.mangaObj.authors = authorArray;
-    this.mangaObj.categories.push(this.categoryObj)
+    this.mangaObj.categories = this.categoires;
+
+    console.log(this.categoires);
 
     this.mangaService.newManga(this.mangaObj).subscribe(() => {
       this.router.navigate(["mangas"]);
