@@ -1,13 +1,12 @@
-import { MenubarModule } from 'primeng/menubar';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { SidebarModule } from 'primeng/sidebar';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
-import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StepsModule } from 'primeng/steps';
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 
@@ -20,22 +19,21 @@ import { MultiSelectModule } from 'primeng/multiselect';
     ButtonModule,
     ToastModule,
     SidebarModule,
-    MenubarModule,
-    StepsModule,
     CalendarModule,
-    MultiSelectModule
+    MultiSelectModule,
+    FormsModule,
+    RouterModule
   ],
   exports: [
     CardModule,
     InputTextModule,
-    CheckboxModule,
     ButtonModule,
     ToastModule,
     SidebarModule,
-    MenubarModule,
-    StepsModule,
     CalendarModule,
-    MultiSelectModule
+    MultiSelectModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class CoreModule { }
