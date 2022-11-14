@@ -1,3 +1,4 @@
+import { MangasModule } from './modules/mangas/mangas.module';
 import { CoreModule } from './modules/core/core.module';
 import { NavMenuComponent } from './shared/components/navbar/nav-menu/nav-menu.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
@@ -23,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AuthenticateModule,
     BrowserAnimationsModule,
+    AuthenticateModule,
+    MangasModule,
     CoreModule
   ],
   providers: [],
