@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { MangaService } from './../../../shared/services/Manga/manga.service';
 import { IManga } from './../../../shared/interface/IManga';
 import { IAuthor } from './../../../shared/interface/IAuthor';
 import { ICategories } from './../../../shared/interface/ICategories';
@@ -18,6 +20,8 @@ export class RegisterMangaComponent implements OnInit {
 
   constructor(
     private categoiresService: CategoiresService,
+    private mangaService: MangaService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,15 +36,16 @@ export class RegisterMangaComponent implements OnInit {
 
   saveManga() {
     const authorArray = [];
-    const categoryArray = [];
     authorArray.push(this.authorObj);
-    categoryArray.push(this.categoryObj);
 
     this.mangaObj.authors = authorArray;
-    this.mangaObj.categories = categoryArray;
+    this.mangaObj.categories.push(this.categoryObj)
 
-    console.log(this.mangaObj);
-
+    this.mangaService.newManga(this.mangaObj).subscribe(() => {
+      this.router.navigate(["mangas"]);
+    }, (error: Error) => {
+      console.log(`Post Error: ${error.message}`);
+    })
   }
 
 }
