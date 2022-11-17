@@ -24,6 +24,7 @@ import { ChapterComponent } from './chapter/chapter.component';
   exports: [
     ListMangaComponent,
     RegisterMangaComponent,
+    ChapterComponent
   ]
 })
 export class MangasModule { }

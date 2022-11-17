@@ -1,3 +1,4 @@
+import { ChapterComponent } from './modules/mangas/chapter/chapter.component';
 import { AuthGuard } from './modules/authenticate/guards/auth.guard';
 import { RegisterMangaComponent } from './modules/mangas/register-manga/register-manga.component';
 import { ListMangaComponent } from './modules/mangas/list-manga/list-manga.component';
@@ -28,6 +29,10 @@ const routes: Routes = [
     path: "mangas/register",
     component: RegisterMangaComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "mangas/chapters",
+    component: ChapterComponent,
   }
 ];
 
