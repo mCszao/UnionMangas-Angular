@@ -9,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
+import { KeyFilterModule } from 'primeng/keyfilter';
 
 @NgModule({
   declarations: [],
@@ -22,7 +24,9 @@ import { MultiSelectModule } from 'primeng/multiselect';
     CalendarModule,
     MultiSelectModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DropdownModule,
+    KeyFilterModule
   ],
   exports: [
     CardModule,
@@ -33,7 +37,9 @@ import { MultiSelectModule } from 'primeng/multiselect';
     CalendarModule,
     MultiSelectModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DropdownModule,
+    KeyFilterModule
   ]
 })
 export class CoreModule { }

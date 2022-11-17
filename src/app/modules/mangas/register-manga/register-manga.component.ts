@@ -16,7 +16,7 @@ export class RegisterMangaComponent implements OnInit {
 
   mangaObj: IManga = {} as IManga;
   authorObj: IAuthor = {} as IAuthor;
-  categoryObj: ICategories = {} as ICategories;
+  selectedCategories: ICategories[] = [];
 
   constructor(
     private categoiresService: CategoiresService,
@@ -26,11 +26,9 @@ export class RegisterMangaComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoiresService.findAllCategory().subscribe(response => {
-      this.categoires = response.data;
-      console.log(response.data.map(teste => {
-        console.log(teste.name[0].toUpperCase() + teste.name.slice(1).toLowerCase());
+      console.log(response.data);
 
-      }));
+      this.categoires = response.data;
     })
   }
 
@@ -38,9 +36,9 @@ export class RegisterMangaComponent implements OnInit {
     const authorArray = [];
     authorArray.push(this.authorObj);
     this.mangaObj.authors = authorArray;
-    this.mangaObj.categories = this.categoires;
+    this.mangaObj.categories = this.selectedCategories;
 
-    console.log(this.categoires);
+    console.log(this.mangaObj);
 
     this.mangaService.newManga(this.mangaObj).subscribe(() => {
       this.router.navigate(["mangas"]);

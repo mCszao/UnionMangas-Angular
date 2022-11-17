@@ -65,7 +65,8 @@
 
         <div class="col-12 md:col-4">
             <span class="p-float-label">
-                <p-multiSelect inputId="multiselect" [(ngModel)]="categoires" [options]="categoires"
+                <p-multiSelect inputId="multiselect" 
+                [(ngModel)]="selectedCategories" [options]="categoires"
                     optionLabel="name" [filter]="false">
                 </p-multiSelect>
                 <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">categorias</label>

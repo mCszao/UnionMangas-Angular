@@ -2,6 +2,8 @@ import { ChapterService } from './../../../shared/services/chapter/chapter.servi
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MangaService } from 'src/app/shared/services/Manga/manga.service';
+import { IGetMangas } from 'src/app/shared/interface/IGetMangas';
+import { IChapters } from 'src/app/shared/interface/IChapters';
 
 @Component({
   selector: 'app-chapter',
@@ -9,6 +11,9 @@ import { MangaService } from 'src/app/shared/services/Manga/manga.service';
   styleUrls: ['./chapter.component.css']
 })
 export class ChapterComponent implements OnInit {
+  mangaId: IGetMangas[] = [];
+  selectedChapter!: IGetMangas;
+  newChapter: IChapters = {} as IChapters;
 
   constructor(
     private mangaService: MangaService,
@@ -17,6 +22,18 @@ export class ChapterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.mangaService.findAllMangas().subscribe(response => {
+      this.mangaId = response.data;
+    })
   }
 
+  saveChapter() {
+    const idManga = this.selectedChapter.idManga;
+    this.chapterService.addChapters(this.newChapter, idManga).subscribe(() => {
+      this.router.navigate(["mangas"]);
+
+    }, (error) => {
+      console.log("Erro: " + error);
+    })
+  }
 }

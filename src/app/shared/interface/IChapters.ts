@@ -1,7 +1,7 @@
 export interface IChapters {
     volume: number,
     numberChapter: number,
-    titleChapter: string,
     pages: number,
+    titleChapter: string,
     linkPages: string
 }
