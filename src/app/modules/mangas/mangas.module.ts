@@ -6,6 +6,7 @@ import { ListMangaComponent } from './list-manga/list-manga.component';
 import { RegisterMangaComponent } from './register-manga/register-manga.component';
 import { MangaComponent } from './manga/manga.component';
 import { EditMangaComponent } from './edit-manga/edit-manga.component';
+import { ChapterComponent } from './chapter/chapter.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { EditMangaComponent } from './edit-manga/edit-manga.component';
     ListMangaComponent,
     RegisterMangaComponent,
     MangaComponent,
-    EditMangaComponent
+    EditMangaComponent,
+    ChapterComponent
   ],
   imports: [
     CommonModule,
