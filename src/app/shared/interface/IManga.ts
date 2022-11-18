@@ -11,8 +11,8 @@ export interface IManga {
     status?: string,
     rating?: number,
     volumeQuantity?: number,
-    releaseDate?: Date,
-    lastUpdate?: Date,
+    releaseDate?: Date | string,
+    lastUpdate?: Date | string,
     authors: IAuthor[],
     categories: ICategories[]
 }

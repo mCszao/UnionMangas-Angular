@@ -1,3 +1,4 @@
+import { DateService } from './../../../shared/utils/date.service';
 import { Router } from '@angular/router';
 import { MangaService } from './../../../shared/services/Manga/manga.service';
 import { IManga } from './../../../shared/interface/IManga';
@@ -21,13 +22,12 @@ export class RegisterMangaComponent implements OnInit {
   constructor(
     private categoiresService: CategoiresService,
     private mangaService: MangaService,
-    private router: Router
+    private router: Router,
+    private dateService: DateService
   ) { }
 
   ngOnInit(): void {
     this.categoiresService.findAllCategory().subscribe(response => {
-      console.log(response.data);
-
       this.categoires = response.data;
     })
   }
@@ -38,7 +38,9 @@ export class RegisterMangaComponent implements OnInit {
     this.mangaObj.authors = authorArray;
     this.mangaObj.categories = this.selectedCategories;
 
-    console.log(this.mangaObj);
+    this.mangaObj.releaseDate = this.dateService.postDate(this.mangaObj.releaseDate);
+    this.mangaObj.lastUpdate = this.dateService.postDate(this.mangaObj.lastUpdate);
+    this.authorObj.birthdate = this.dateService.postDate(this.authorObj.birthdate);
 
     this.mangaService.newManga(this.mangaObj).subscribe(() => {
       this.router.navigate(["mangas"]);
