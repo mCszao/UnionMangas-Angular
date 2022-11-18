@@ -16,10 +16,12 @@
 .button-register {
     background-color: var(--colors-orange-base);
     font-size: 0.875rem;
+    transition: 0.3s;
 }
 
 .button-register:hover {
     background-color: var(--colors-orange-brught);
+    transition: 0.3s;
 }
 
 .question-account-login {
