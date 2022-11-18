@@ -7,14 +7,14 @@
                     <div class="col-12 md:col-4 xl:mt-0 mt-0">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="authorObj.name" />
-                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">nome</label>
+                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">nome*</label>
                         </span>
                     </div>
 
                     <div class="col-12 md:col-4 xl:mt-0 mt-3">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="authorObj.pseudonym" />
-                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">Pseudónimo</label>
+                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">Pseudónimo*</label>
                         </span>
                     </div>
 
@@ -23,7 +23,7 @@
                             <p-calendar inputId="calendar" dataType="string" dateFormat="dd/mm/yy"
                                 [(ngModel)]="authorObj.birthdate"></p-calendar>
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">data de
-                                nascimento</label>
+                                nascimento*</label>
                         </span>
                     </div>
                 </div>
@@ -36,21 +36,21 @@
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="mangaObj.mainTitle" />
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título
-                                principal</label>
+                                principal*</label>
                         </span>
                     </div>
 
                     <div class="col-12 md:col-4 md:mt-0 mt-3">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="mangaObj.linkImage" />
-                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">imagem/link</label>
+                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">imagem/link*</label>
                         </span>
                     </div>
 
                     <div class="col-12 md:col-4 md:mt-0 mt-3">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="mangaObj.description" />
-                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">descrição</label>
+                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">descrição*</label>
                         </span>
                     </div>
 
@@ -78,7 +78,7 @@
                             <p-multiSelect inputId="multiselect" [(ngModel)]="selectedCategories" [options]="categoires"
                                 optionLabel="name" [filter]="false">
                             </p-multiSelect>
-                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">categorias</label>
+                            <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">categorias*</label>
                         </span>
                     </div>
                 </div>
@@ -86,10 +86,17 @@
         </ng-template>
 
         <ng-template pTemplate="footer">
-            <div class="flex justify-content-center -mt-3 align-items-center md:justify-content-end">
-                <button type="submit" label="cadastrar" pButton
-                    class="capitalize register border-none font-bold text-800 col-12 md:col-2" (click)="saveManga()"></button>
+            <div class=" -mt-3 md:justify-content-">
+                <div class="flex justify-content-between flex-wrap gap-4">
+                    <button type="submit" label="cancelar" pButton
+                        class="capitalize return border-none font-bold text-800 ml-0 md:ml-4 col-12 md:col-1 "
+                        (click)="return()"></button>
+                    <button type="submit" label="cadastrar" pButton
+                        class="capitalize register border-none font-bold text-800 mr-0 md:mr-4 col-12 md:col-1 "
+                        (click)="saveManga()"></button>
+                </div>
             </div>
         </ng-template>
     </p-card>
 </div>
+<p-toast [showTransitionOptions]="'200ms'"></p-toast>

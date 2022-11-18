@@ -8,11 +8,11 @@ export interface IManga {
     linkImage: string,
     blobImage?: string[],
     description: string,
-    status?: string,
+    status: string,
     rating?: number,
     volumeQuantity?: number,
-    releaseDate?: Date | string,
-    lastUpdate?: Date | string,
+    releaseDate: Date | string,
+    lastUpdate: Date | string,
     authors: IAuthor[],
     categories: ICategories[]
 }

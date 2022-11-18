@@ -1,29 +1,41 @@
 :host {
     --colors-orange-base: rgb(244, 117, 33);
     --colors-orange-brught: rgb(255, 148, 77);
+    --colors-red-base: rgb(244, 33, 33);
+    --colors-red-brught: rgb(255, 77, 77);
 }
 
 @media (min-width: 390px) {
     .card-manga {
-        margin-top: 0em;
+        margin: 0em auto;
     }
 }
 
 @media (min-width: 1280px) {
     .card-manga {
-        margin-top: 6em;
+        margin: 6em auto;
     }
 }
 
 @media (min-width: 1920px) {
     .card-manga {
-        margin-top: 10em;
+        margin: 10em auto;
     }
 }
 
 .titles {
     font-size: 1.75rem;
     font-weight: 500;
+}
+
+.return {
+    background-color: var(--colors-red-base);
+    transition: 0.3s;
+}
+
+.return:hover {
+    background-color: var(--colors-red-brught);
+    transition: 0.3s;
 }
 
 .register {
