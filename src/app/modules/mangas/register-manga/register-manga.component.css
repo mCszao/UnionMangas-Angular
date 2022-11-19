@@ -5,21 +5,25 @@
     --colors-red-brught: rgb(255, 77, 77);
 }
 
-@media (min-width: 390px) {
+
+@media (max-width: 390px) {
     .card-manga {
         margin: 0em auto;
+        max-width: 90vw;
     }
 }
 
 @media (min-width: 1280px) {
     .card-manga {
         margin: 6em auto;
+        max-width: 90vw;
     }
 }
 
 @media (min-width: 1920px) {
     .card-manga {
         margin: 10em auto;
+        max-width: 65vw;
     }
 }
 
