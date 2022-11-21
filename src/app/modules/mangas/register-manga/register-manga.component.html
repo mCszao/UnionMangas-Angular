@@ -1,24 +1,24 @@
-<div class="flex justify-content-center  p-3 md:p-3 lg:p-0 xl:p-0">
+<div class="flex justify-content-center p-3 md:p-0">
     <p-card class="card-manga">
         <ng-template pTemplate="content">
-            <section class="">
+            <section>
                 <h1 class="capitalize font-normal titles">autor</h1>
                 <div class="grid p-fluid m-3">
-                    <div class="col-12 md:col-4 xl:mt-0 mt-0">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="authorObj.name" />
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">nome*</label>
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 xl:mt-0 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="authorObj.pseudonym" />
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">Pseudónimo*</label>
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 xl:mt-0 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <p-calendar inputId="calendar" dataType="string" dateFormat="dd/mm/yy"
                                 [(ngModel)]="authorObj.birthdate"></p-calendar>
@@ -29,10 +29,10 @@
                 </div>
             </section>
 
-            <section class="mt-0 md:mt-5">
+            <section>
                 <h1 class="capitalize font-normal titles">mangá</h1>
                 <div class="grid p-fluid m-3">
-                    <div class="col-12 md:col-4 md:mt-0 mt-0">
+                    <div class="field col-12 md:col-4 ">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="mangaObj.mainTitle" />
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">título
@@ -40,21 +40,21 @@
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 md:mt-0 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="mangaObj.linkImage" />
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">imagem/link*</label>
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 md:mt-0 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <input type="text" pInputText [(ngModel)]="mangaObj.description" />
                             <label for="float-input-invalid" class="capitalize ng-invalid ng-dirty">descrição*</label>
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 md:mt-3 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <p-calendar inputId="calendar" dataType="date" [(ngModel)]="mangaObj.releaseDate"
                                 dataType="string">
@@ -64,7 +64,7 @@
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 md:mt-3 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <p-calendar inputId="calendar" dateFormat="dd/mm/yy" [(ngModel)]="mangaObj.lastUpdate"
                                 dataType="string"></p-calendar>
@@ -73,7 +73,7 @@
                         </span>
                     </div>
 
-                    <div class="col-12 md:col-4 md:mt-3 mt-3">
+                    <div class="field col-12 md:col-4">
                         <span class="p-float-label">
                             <p-multiSelect inputId="multiselect" [(ngModel)]="selectedCategories" [options]="categoires"
                                 optionLabel="name" [filter]="false">
@@ -86,7 +86,7 @@
         </ng-template>
 
         <ng-template pTemplate="footer">
-            <div class=" -mt-3 md:justify-content-">
+            <div class=" -mt-4 md:justify-content-">
                 <div class="flex justify-content-between flex-wrap gap-4">
                     <button type="submit" label="cancelar" pButton
                         class="capitalize return border-none font-bold text-800 ml-0 md:ml-4 col-12 md:col-1 "
