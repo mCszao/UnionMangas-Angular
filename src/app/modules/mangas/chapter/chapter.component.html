@@ -1,39 +1,64 @@
-<div class="field col-12 md:col-4">
-    <span class="p-float-label">
-        <p-dropdown [options]="mangaId" [(ngModel)]="selectedChapter" placeholder="Selecione o manga"
-            optionLabel="mainTitle"></p-dropdown>
-        <label for="dropdown">Selecione o manga</label>
-    </span>
-</div>
-<div class="field col-12 md:col-4">
-    <span class="p-float-label">
-        <input type="text" id="inputtext" pInputText [(ngModel)]="newChapter.titleChapter">
-        <label for="inputtext">titleChapter</label>
-    </span>
-</div>
-<div class="field col-12 md:col-4">
-    <span class="p-float-label">
-        <input type="text" id="inputtext" pInputText [(ngModel)]="newChapter.linkPages">
-        <label for="inputtext">linkPages</label>
-    </span>
-</div>
-<div class="field col-12 md:col-4">
-    <span class="p-float-label">
-        <input type="number" id="inputtext" pInputText [(ngModel)]="newChapter.pages">
-        <label for="inputtext">pages</label>
-    </span>
-</div>
-<div class="field col-12 md:col-4">
-    <span class="p-float-label">
-        <input type="number" id="inputtext" pInputText [(ngModel)]="newChapter.numberChapter">
-        <label for="inputtext">numberChapter</label>
-    </span>
-</div>
-<div class="field col-12 md:col-4">
-    <span class="p-float-label">
-        <input type="number" id="inputtext" pInputText [(ngModel)]="newChapter.volume">
-        <label for="inputtext">volume</label>
-    </span>
+<div class="flex justify-content-center">
+    <p-card class="card-chapter border-1">
+        <ng-template pTemplate="header">
+            <div *ngIf="selectedChapter !== undefined">
+                <div class="text-center m-2">
+                    <h1>
+                        {{selectedChapter.mainTitle}}
+                    </h1>
+                </div>
+
+                <div>
+                    <img class="img-manga" src={{selectedChapter.linkImage}}>
+                </div>
+            </div>
+        </ng-template>
+    </p-card>
+
+    <p-card class="card-chapter border-1">
+        <ng-template pTemplate="content">
+            <div class="grid">
+                <div class="field col-12 md:col-5">
+                    <span class="p-float-label">
+                        <p-dropdown [options]="mangaId" [(ngModel)]="selectedChapter" placeholder="Selecione o manga"
+                            optionLabel="mainTitle"></p-dropdown>
+                        <label for="dropdown">Selecione o manga</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-5">
+                    <span class="p-float-label">
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="newChapter.titleChapter">
+                        <label for="inputtext">titleChapter</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-5">
+                    <span class="p-float-label">
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="newChapter.linkPages">
+                        <label for="inputtext">linkPages</label>
+                    </span>
+                </div>
+
+                <div class="field col-12 md:col-5">
+                    <span class="p-float-label">
+                        <input type="number" id="inputtext" pInputText [(ngModel)]="newChapter.pages">
+                        <label for="inputtext">pages</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-5">
+                    <span class="p-float-label">
+                        <input type="number" id="inputtext" pInputText [(ngModel)]="newChapter.numberChapter">
+                        <label for="inputtext">numberChapter</label>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-5">
+                    <span class="p-float-label">
+                        <input type="number" id="inputtext" pInputText [(ngModel)]="newChapter.volume">
+                        <label for="inputtext">volume</label>
+                    </span>
+                </div>
+            </div>
+        </ng-template>
+    </p-card>
 </div>
 
 <button type="submit" (click)="saveChapter()">teste</button>
