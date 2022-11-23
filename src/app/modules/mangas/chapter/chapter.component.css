@@ -1,0 +1,24 @@
+@media (max-width: 390px) {
+    .card-chapter {
+        margin-top: 0em;
+        max-width: 90vw;
+    }
+}
+
+@media (min-width: 1280px) {
+    .card-chapter {
+        margin-top: 6em;
+        max-width: 90vw;
+    }
+}
+
+@media (min-width: 1920px) {
+    .card-chapter {
+        margin-top: 10em;
+        max-width: 40vw;
+    }
+}
+
+.img-manga {
+    width: 9vw;
+}
