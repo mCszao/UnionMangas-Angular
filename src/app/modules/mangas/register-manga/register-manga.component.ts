@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-register-manga',
   templateUrl: './register-manga.component.html',
-  styleUrls: ['./register-manga.component.css'],
+  styleUrls: ['./register-manga.component.scss'],
   providers: [MessageService]
 })
 export class RegisterMangaComponent implements OnInit {

@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-manga',
   templateUrl: './manga.component.html',
-  styleUrls: ['./manga.component.css']
+  styleUrls: ['./manga.component.scss']
 })
 export class MangaComponent implements OnInit {
   @Input() manga: IGetMangas = {} as IGetMangas;

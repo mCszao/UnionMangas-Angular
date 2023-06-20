@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-list-manga',
   templateUrl: './list-manga.component.html',
-  styleUrls: ['./list-manga.component.css']
+  styleUrls: ['./list-manga.component.scss']
 })
 export class ListMangaComponent implements OnInit {
   responseManga: IGetMangas[] = []

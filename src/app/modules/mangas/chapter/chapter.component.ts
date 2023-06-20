@@ -8,7 +8,7 @@ import { IChapters } from 'src/app/shared/interface/IChapters';
 @Component({
   selector: 'app-chapter',
   templateUrl: './chapter.component.html',
-  styleUrls: ['./chapter.component.css']
+  styleUrls: ['./chapter.component.scss']
 })
 export class ChapterComponent implements OnInit {
   mangaId: IGetMangas[] = [];
