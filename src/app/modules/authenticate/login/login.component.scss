@@ -5,45 +5,82 @@
     --colors-scarpa-flow: rgb(89, 89, 91);
 }
 
-.card-login {
-    margin: 12em auto;
-}
+::ng-deep .box-container {
+    margin: 12rem auto;
 
-.title-login {
-    font-size: 1.75rem;
-    font-weight: 500;
-}
+    .box-content {
+        display: flex;
+        justify-content: center;
 
-.button-login {
-    background-color: var(--colors-orange-base);
-    font-size: 0.875rem;
-}
+        .p-card {
+            .p-card-header {
+                text-align: center;
+                font-size: 1.75rem;
+                font-weight: 500;
+                text-transform: capitalize;
+                padding-top: 2rem;
+                margin-bottom: -1rem;
+            }
 
-.button-login:hover {
-    background-color: var(--colors-orange-brught);
-}
+            .p-card-content {
+                .box-form {
+                    margin: 2rem;
+                }
 
-.question-password {
-    font-size: 0.875rem;
-    color: var(--colors-silver-chalice);
-    transition: 0.5s;
-}
+                .box-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-.question-password:hover {
-    color: var(--colors-scarpa-flow);
-    transition: 0.5s;
-}
+                    .p-button {
+                        text-transform: capitalize;
+                        border: none;
+                        font-weight: 700;
+                        background-color: var(--colors-orange-base);
+                        font-size: 0.875rem;
+                    }
 
-.question-account {
-    font-size: 1.125rem;
-    font-weight: 500;
-}
+                    .p-button:hover {
+                        background-color: var(--colors-orange-brught);
+                    }
+                }
+            }
 
-.register {
-    color: var(--colors-orange-base);
-    text-decoration: none;
-}
+            .p-card-footer {
+                .box-links {
+                    text-align: center;
 
-.register:hover {
-    text-decoration: underline;
+                    a {
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 0.875rem;
+                        color: var(--colors-silver-chalice);
+                        transition: 0.5s;
+                    }
+
+                    a:hover {
+                        color: var(--colors-scarpa-flow);
+                        transition: 0.5s;
+                    }
+
+                    .box-account {
+                        span {
+                            font-size: 1.125rem;
+                            font-weight: 500;
+
+                            a {
+                                color: var(--colors-orange-base);
+                                text-decoration: none;
+                                font-weight: 700;
+                            }
+
+                            a:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
