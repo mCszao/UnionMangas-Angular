@@ -1,0 +1,8 @@
+export { type IAuthor } from "./IAuthor"
+export { type ICategories } from "./ICategories"
+export { type IChapters } from "./IChapters"
+export { type IGetMangas } from "./IGetMangas"
+export { type ILogin } from "./ILogin"
+export { type IManga } from "./IManga"
+export { type IPage } from "./IPage"
+export { type IRegisterUser } from "./IRegisterUser"
