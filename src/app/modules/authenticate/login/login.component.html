@@ -1,5 +1,5 @@
 <section class="box-container">
-    <div class="box-content" [formGroup]="formLogin">
+    <form class="box-content" [formGroup]="formLogin">
         <p-card>
             <ng-template pTemplate="header">
                 <h1>Login</h1>
@@ -37,6 +37,6 @@
                 </div>
             </ng-template>
         </p-card>
-    </div>
+    </form>
 </section>
 <p-toast [showTransitionOptions]="'200ms'"></p-toast>

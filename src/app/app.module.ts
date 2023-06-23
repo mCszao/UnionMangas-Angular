@@ -24,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AuthenticateModule,
     BrowserAnimationsModule,
-    AuthenticateModule,
     MangasModule,
     CoreModule
   ],
