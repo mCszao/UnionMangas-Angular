@@ -5,19 +5,15 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AuthenticateModule } from './modules/authenticate/authenticate.module';
 import { AppComponent } from './app.component';
 
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HomePageComponent } from './modules/home-page/home-page.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    NavMenuComponent,
-  ],
+  declarations: [AppComponent, NavbarComponent, NavMenuComponent, HomePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,9 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AuthenticateModule,
     MangasModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
