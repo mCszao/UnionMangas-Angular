@@ -6,39 +6,44 @@ import { RegisterUserComponent } from './modules/authenticate/register-user/regi
 import { LoginComponent } from './modules/authenticate/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomePageComponent } from './modules/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: "",
-    pathMatch: "full",
-    redirectTo: "mangas"
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/home',
   },
   {
-    path: "mangas",
-    component: ListMangaComponent
+    path: '/home',
+    component: HomePageComponent,
   },
   {
-    path: "login",
-    component: LoginComponent
+    path: 'mangas',
+    component: ListMangaComponent,
   },
   {
-    path: "registerUser",
-    component: RegisterUserComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: "mangas/register",
+    path: 'registerUser',
+    component: RegisterUserComponent,
+  },
+  {
+    path: 'mangas/register',
     component: RegisterMangaComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path: "mangas/chapters",
+    path: 'mangas/chapters',
     component: ChapterComponent,
-    canActivate: [AuthGuard]
-  }
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

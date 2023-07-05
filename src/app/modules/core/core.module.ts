@@ -11,7 +11,11 @@ import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { KeyFilterModule } from 'primeng/keyfilter';
+
+import { GalleriaModule } from 'primeng/galleria';
+
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [],
@@ -28,7 +32,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     DropdownModule,
     KeyFilterModule,
+
+    GalleriaModule,
+
     ReactiveFormsModule
+
   ],
   exports: [
     CardModule,
@@ -42,7 +50,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     DropdownModule,
     KeyFilterModule,
+
+    GalleriaModule,
+  ],
+
     ReactiveFormsModule
   ]
+
 })
-export class CoreModule { }
+export class CoreModule {}
