@@ -10,10 +10,11 @@ import { MessageService } from 'primeng/api';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
+  private token = environment.Token;
 
   constructor(
     private loginService: LoginService,
@@ -37,14 +38,27 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.formLogin.valid) {
-      this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe((res: any) => {
-        localStorage.setItem(environment.Token, res.accessToken);
-        this.loginService.updateLoggedIn();
-        this.router.navigate(["mangas"]);
-      }, (error) => {
-        this.showError();
-        console.log(error);
-      })
-    }
+      this.loginService.login(this.formLogin.value as ILogin)
+        .then((res: any) => {
+          console.log(res);
+          localStorage.setItem(this.token, res.token);
+          this.loginService.updateLoggedIn();
+          this.router.navigate(["mangas"]);
+        }).catch((error) => {
+          console.log(error);
+        })
+    };
+
+
+    // if (this.formLogin.valid) {
+    //   this.loginService.login(this.formLogin.getRawValue() as ILogin).subscribe((res: any) => {
+    //     localStorage.setItem(environment.Token, res.accessToken);
+    //     this.loginService.updateLoggedIn();
+    //     this.router.navigate(["mangas"]);
+    //   }, (error) => {
+    //     this.showError();
+    //     console.log(error);
+    //   })
+    // }
   }
 }
