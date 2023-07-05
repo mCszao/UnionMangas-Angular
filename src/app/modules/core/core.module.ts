@@ -11,6 +11,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { KeyFilterModule } from 'primeng/keyfilter';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import { KeyFilterModule } from 'primeng/keyfilter';
     FormsModule,
     RouterModule,
     DropdownModule,
-    KeyFilterModule
+    KeyFilterModule,
+    ReactiveFormsModule
   ],
   exports: [
     CardModule,
@@ -39,7 +41,8 @@ import { KeyFilterModule } from 'primeng/keyfilter';
     FormsModule,
     RouterModule,
     DropdownModule,
-    KeyFilterModule
+    KeyFilterModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }
