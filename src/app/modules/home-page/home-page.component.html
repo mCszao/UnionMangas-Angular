@@ -8,14 +8,35 @@
 </section>
 <section class="carrousel">
   <a class="highlight-button"><span>Ver Todos os Destaques</span>👌</a>
-  <article class="box-image">
+  <p-galleria
+    [value]="images"
+    [responsiveOptions]="responsiveOptions"
+    [containerStyle]="{
+      width: '100vw',
+      backgroundColor: 'aqua',
+      color: '#fff'
+    }"
+    [numVisible]="7"
+    [showThumbnailNavigators]="false"
+    [autoPlay]="true"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img [src]="item.itemImageSrc" style="width: 30%" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="flex justify-content-center">
+        <p>{{ item.animeTitle }}</p>
+      </div>
+    </ng-template>
+  </p-galleria>
+  <!-- <article class="box-image">
     <a href="">
       <img
         src="https://static3.mangalivre.net/destaques/H7KuadWXcAh-L9GQ5r8aqg/9189/mashle.png"
         alt="Imagem de anime"
       />
     </a>
-  </article>
+  </article> -->
   <aside class="chapter-info">
     <a>Capítulo <span class="number">125</span></a>
   </aside>
