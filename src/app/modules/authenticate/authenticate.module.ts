@@ -6,7 +6,6 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     CoreModule
   ],
   exports: [
